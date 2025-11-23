@@ -134,6 +134,14 @@ section {
     transition: background-color 0.2s;
 }
 
+
+.hero-right .btn {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 40px;  /* change this number to move up/down */
+    z-index: 10;
+}
 .btn:hover {
     background-color: #064a19;
 }
