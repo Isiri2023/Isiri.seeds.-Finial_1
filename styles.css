@@ -50,10 +50,6 @@ section {
     width: 100%;
     scroll-margin-top: 100px;
 }
-
-/* =============================
-   HERO SECTION — 33% / 66%
-============================= */
 /* --- Color Variables for Consistency --- */
 :root {
     --primary-green: #0e6b23; /* Logo background & Button */
@@ -85,7 +81,7 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-     padding: 0 5% 0 8%;
+    padding: 0;
     /* Optional: Add a subtle shadow for depth */
     box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1); 
 }
