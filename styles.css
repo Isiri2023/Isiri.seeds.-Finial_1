@@ -1,105 +1,135 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+box-sizing: border-box;
+margin: 0;
+padding: 0;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: #103c1d;
-    background-color: #f8fbe8;
+font-family: Arial, sans-serif;
+line-height: 1.6;
+color: #103c1d;
+background-color: #f8fbe8;
 }
 
 /* =============================
-   HEADER / NAVIGATION
+  HEADER / NAVIGATION
 ============================= */
 header {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px 40px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    background-color: #ffffff;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+width: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 20px 40px;
+position: fixed;
+top: 0;
+left: 0;
+z-index: 1000;
+background-color: #ffffff;
+box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 }
 
 nav {
-    display: flex;
-    gap: 40px;
+display: flex;
+gap: 40px;
 }
 
 nav a {
-    text-decoration: none;
-    color: #0e6b23;
-    font-weight: 600;
-    transition: color 0.2s;
+text-decoration: none;
+color: #0e6b23;
+font-weight: 600;
+transition: color 0.2s;
 }
 
 nav a:hover {
-    color: #064a19;
+color: #064a19;
 }
 
 /* Base spacing for all sections (accounts for fixed header) */
 section {
-    padding: 100px 0;
-    width: 100%;
-    scroll-margin-top: 100px;
+padding: 100px 0;
+width: 100%;
+scroll-margin-top: 100px;
 }
 
 /* =============================
-   HERO SECTION — 33% / 66%
+  HERO SECTION — 33% / 66%
 ============================= */
-css for accordion
+/* --- Color Variables for Consistency --- */
+:root {
+    --primary-green: #0e6b23; /* Logo background & Button */
+    --secondary-green: #064a19; /* Button hover */
+    --off-white: #f8fbec; /* A very light, slightly greenish-white */
+    --light-greenish-white: #f7fbf2; /* For a subtle right-side background */
+}
 
-
+/* --- Hero Component Structure --- */
 .hero {
-    display: flex;
+display: flex;
     height: calc(100vh - 60px);
-    margin-top: 0;
-    align-items: stretch;
-    padding: 0;
+    /* Adjusted height to use 100% of the viewport height (minus nav height if applicable) */
+    height: 100vh; 
+margin-top: 0;
+align-items: stretch;
+padding: 0;
+    /* Ensure no scrollbar appears due to height calculation */
+    overflow: hidden; 
 }
 
 /* LEFT SIDE — 33% WIDTH + FULL BACKGROUND IMAGE */
+/* --- LEFT SIDE: Logo/Identity Section (33%) --- */
 .hero-left {
-    flex: 0 0 33%;
+flex: 0 0 33%;
     background: #0e6b23 url("4d8d7eba-c59c-48bb-869a-b4f621e22f22.png")
         center center / cover no-repeat;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0;
+    /* Use the defined primary green color */
+    background-color: var(--primary-green); 
+    /* Remove the unnecessary background image from this side */
+    /* background: var(--primary-green) url("4d8d7eba-c59c-48bb-869a-b4f621e22f22.png") center center / cover no-repeat; */
+height: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 0;
+    /* Optional: Add a subtle shadow for depth */
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1); 
 }
 
 /* Hide old logo img if still in HTML */
 .hero-left img {
-    display: none;
+display: none;
 }
 
 /* RIGHT SIDE — 66% CONTENT */
+/* --- RIGHT SIDE: Content & Image Section (67%) --- */
 .hero-right {
     flex: 0 0 66%;
-    
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
+    /* Slightly increased flex basis to fill the rest of the space */
+    flex: 1; 
+    /* Add a light background color for better separation from the main body */
+    background-color: var(--light-greenish-white);
+
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: flex-start;
     padding: 0 5%;
         position: relative;
-    z-index: 1;
+    /* Increased horizontal padding for more breathing room */
+    padding: 0 8%; 
+    position: relative;
+z-index: 1;
     
 }
 
+/* Right-side Text Styling */
 .hero-right h1 {
-    font-size: 3.5rem;
+font-size: 3.5rem;
     color: #0e6b23;
     margin-bottom: 20px;
+    color: var(--primary-green); /* Text color matching the logo green */
+    margin-bottom: 25px; /* Increased margin */
+    /* Optional: Add a slight text shadow for definition */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05); 
 }
 
 .hero-right p {
@@ -107,193 +137,230 @@ css for accordion
     color: #0e6b23;
     margin-bottom: 30px;
     max-width: 600px;
+    font-size: 1.3rem; /* Slightly larger text for emphasis */
+    color: var(--secondary-green); /* Darker green for body text for better contrast */
+    margin-bottom: 40px; /* Increased margin */
+    max-width: 650px; /* Wider max width */
+    line-height: 1.5; /* Improved readability */
 }
 
 
 
+/* Image Overlay (Adjusted for better visual integration) */
+/* The background image is now applied here for the accordion/hero content */
 .hero-right::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
     background-color: rgba(248, 251, 232, 0.0);
-    z-index: -1;
+    /* Replace with the correct image URL for your main hero background */
+    background: url("your-hero-image-url.jpg") center center / cover no-repeat; 
+z-index: -1;
+    /* Added a subtle dark overlay to make text pop more */
+    opacity: 0.9; /* 0.0 opacity in original, increasing for effect */
+    background-color: rgba(0, 0, 0, 0.2); 
+    /* Blend the overlay with the light background */
+    mix-blend-mode: multiply; 
 }
 
 
+/* --- Button Styling --- */
 .btn {
     background-color: #0e6b23;
     color: #fff;
     padding: 15px 30px;
-    border: none;
+    background-color: var(--primary-green);
+    color: var(--off-white); /* Use off-white for button text */
+    padding: 15px 35px; /* Slightly more padding */
+border: none;
     border-radius: 5px;
-    text-decoration: none;
+    border-radius: 8px; /* Slightly more rounded corners */
+text-decoration: none;
     font-size: 1rem;
     font-weight: 600;
-    cursor: pointer;
+    font-size: 1.05rem;
+    font-weight: 700; /* Bolder text */
+    letter-spacing: 0.5px; /* Subtle letter spacing */
+cursor: pointer;
     transition: background-color 0.2s;
+    /* Added a subtle box shadow to make the button lift off the page */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+    transition: all 0.3s ease; /* Smoother transition */
 }
 
 
+/* Positioning the button (assuming this is part of the accordion content now) */
 .hero-right .btn {
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    /* If this is a static hero, this absolute positioning might be disruptive. 
+    It's best to remove it unless it's strictly necessary for the accordion functionality. */
+    position: static; 
+    /* Remove absolute positioning lines unless required for specific accordion layout: 
+   left: 50%;
+   transform: translateX(-50%);
     bottom: 40px;  /* change this number to move up/down */
     z-index: 10;
+    bottom: 40px; 
+    z-index: 10; */
 }
+
 .btn:hover {
     background-color: #064a19;
+    background-color: var(--secondary-green); /* Darker green on hover */
+    /* Lift the button slightly on hover */
+    transform: translateY(-2px); 
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
 }
 
 /* =============================
-   FEATURES SECTION (HOME)
+  FEATURES SECTION (HOME)
 ============================= */
 
 .features {
-    text-align: center;
-    padding: 80px 10%;
-    background-color: #f8fbe8;
+text-align: center;
+padding: 80px 10%;
+background-color: #f8fbe8;
 }
 
 .features h2 {
-    font-size: 2.5rem;
-    color: #0e6b23;
-    margin-bottom: 40px;
+font-size: 2.5rem;
+color: #0e6b23;
+margin-bottom: 40px;
 }
 
 .feature-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 40px;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 40px;
 }
 
 .feature-item {
-    flex: 1 1 220px;
-    max-width: 250px;
+flex: 1 1 220px;
+max-width: 250px;
 }
 
 .feature-item i {
-    font-size: 50px;
-    color: #0e6b23;
+font-size: 50px;
+color: #0e6b23;
 }
 
 .feature-item h3 {
-    font-size: 1.5rem;
-    margin: 20px 0 10px;
-    color: #0e6b23;
+font-size: 1.5rem;
+margin: 20px 0 10px;
+color: #0e6b23;
 }
 
 .feature-item p {
-    font-size: 1rem;
-    color: #0e6b23;
+font-size: 1rem;
+color: #0e6b23;
 }
 
 /* =============================
-   ABOUT SECTION
+  ABOUT SECTION
 ============================= */
 
 .about-section {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 50px;
-    padding: 80px 10%;
-    background-color: #ffffff;
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+gap: 50px;
+padding: 80px 10%;
+background-color: #ffffff;
 }
 
 .about-section img {
-    flex: 1 1 400px;
-    max-width: 500px;
-    width: 100%;
-    border-radius: 8px;
+flex: 1 1 400px;
+max-width: 500px;
+width: 100%;
+border-radius: 8px;
 }
 
 .about-text {
-    flex: 1 1 400px;
+flex: 1 1 400px;
 }
 
 .about-text h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #0e6b23;
+font-size: 2.5rem;
+margin-bottom: 20px;
+color: #0e6b23;
 }
 
 .about-text p {
-    font-size: 1rem;
-    color: #0e6b23;
-    line-height: 1.6;
+font-size: 1rem;
+color: #0e6b23;
+line-height: 1.6;
 }
 
 /* =============================
-   FOUNDER SECTION
+  FOUNDER SECTION
 ============================= */
 
 .founder-section {
-    background-color: #f8fbe8;
-    padding: 80px 10%;
-    text-align: center;
+background-color: #f8fbe8;
+padding: 80px 10%;
+text-align: center;
 }
 
 .founder-section h2 {
-    font-size: 2.5rem;
-    color: #0e6b23;
-    margin-bottom: 60px;
+font-size: 2.5rem;
+color: #0e6b23;
+margin-bottom: 60px;
 }
 
 .founder-cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-    justify-content: center;
+display: flex;
+flex-wrap: wrap;
+gap: 40px;
+justify-content: center;
 }
 
 .founder-card {
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    max-width: 350px;
-    overflow: hidden;
+background-color: #ffffff;
+border-radius: 8px;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+max-width: 350px;
+overflow: hidden;
 }
 
 .founder-card img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
+width: 100%;
+height: auto;
+object-fit: cover;
 }
 
 .founder-card h3 {
-    font-size: 1.5rem;
-    color: #0e6b23;
-    margin: 15px 0;
+font-size: 1.5rem;
+color: #0e6b23;
+margin: 15px 0;
 }
 
 .founder-card p {
-    font-size: 1rem;
-    color: #0e6b23;
-    padding: 0 20px 20px;
-    text-align: left;
+font-size: 1rem;
+color: #0e6b23;
+padding: 0 20px 20px;
+text-align: left;
 }
 
 /* =============================
-   GENERAL TITLE (OTHER PAGES)
+  GENERAL TITLE (OTHER PAGES)
 ============================= */
 
 .section-title {
-    text-align: center;
-    font-size: 2.5rem;
-    color: #0e6b23;
-    margin-bottom: 40px;
+text-align: center;
+font-size: 2.5rem;
+color: #0e6b23;
+margin-bottom: 40px;
 }
 
 /* =============================
-   SERVICES PAGE
+   PRODUCTS PAGE
 ============================= */
 
-.services-grid {
+.product-grid {
     display: flex;
     flex-wrap: wrap;
     gap: 40px;
@@ -301,164 +368,201 @@ css for accordion
     padding: 0 10%;
 }
 
-.service-item {
-    flex: 1 1 250px;
-    max-width: 300px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 30px;
-    text-align: center;
-}
-
-.service-item i {
-    font-size: 40px;
-    color: #0e6b23;
-    margin-bottom: 15px;
-}
-
-.service-item h3 {
-    font-size: 1.4rem;
-    margin-bottom: 10px;
-    color: #0e6b23;
-}
-
-.service-item p {
-    font-size: 1rem;
-    color: #0e6b23;
-}
-
-/* =============================
-   GALLERY PAGE
-============================= */
-
-.gallery-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-    justify-content: center;
-    padding: 0 10%;
-}
-
-.gallery-item {
+.product-item {
     flex: 1 1 300px;
     max-width: 350px;
+    text-align: center;
 }
 
-.gallery-item img {
+.product-item img {
     width: 100%;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-item h3 {
+    margin-top: 15px;
+    font-size: 1.2rem;
+    color: #0e6b23;
+}
+
+/* When using icons instead of images for products */
+.product-item i {
+    font-size: 4rem;
+    color: #0e6b23;
+    margin-bottom: 10px;
+}
+
+/* =============================
+  SERVICES PAGE
+============================= */
+
+.services-grid {
+display: flex;
+flex-wrap: wrap;
+gap: 40px;
+justify-content: center;
+padding: 0 10%;
+}
+
+.service-item {
+flex: 1 1 250px;
+max-width: 300px;
+background-color: #ffffff;
+border-radius: 8px;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+padding: 30px;
+text-align: center;
+}
+
+.service-item i {
+font-size: 40px;
+color: #0e6b23;
+margin-bottom: 15px;
+}
+
+.service-item h3 {
+font-size: 1.4rem;
+margin-bottom: 10px;
+color: #0e6b23;
+}
+
+.service-item p {
+font-size: 1rem;
+color: #0e6b23;
+}
+
+/* =============================
+  GALLERY PAGE
+============================= */
+
+.gallery-grid {
+display: flex;
+flex-wrap: wrap;
+gap: 40px;
+justify-content: center;
+padding: 0 10%;
+}
+
+.gallery-item {
+flex: 1 1 300px;
+max-width: 350px;
+}
+
+.gallery-item img {
+width: 100%;
+border-radius: 8px;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* When using icons in gallery */
 .gallery-item i {
-    font-size: 5rem;
-    color: #0e6b23;
-    display: block;
-    text-align: center;
-    margin-bottom: 10px;
+font-size: 5rem;
+color: #0e6b23;
+display: block;
+text-align: center;
+margin-bottom: 10px;
 }
 
 /* =============================
-   CONTACT PAGE
+  CONTACT PAGE
 ============================= */
 
 .contact-section {
-    background-color: #f8fbe8;
-    padding: 80px 10%;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 50px;
+background-color: #f8fbe8;
+padding: 80px 10%;
+display: flex;
+flex-wrap: wrap;
+gap: 50px;
 }
 
 .contact-form {
-    flex: 1 1 400px;
-    max-width: 500px;
+flex: 1 1 400px;
+max-width: 500px;
 }
 
 .contact-form form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+display: flex;
+flex-direction: column;
+gap: 15px;
 }
 
 .contact-form input,
 .contact-form textarea {
-    padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-    resize: vertical;
+padding: 15px;
+border: 1px solid #ccc;
+border-radius: 5px;
+font-size: 1rem;
+resize: vertical;
 }
 
 .contact-form button {
-    background-color: #0e6b23;
-    color: #fff;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: 600;
-    transition: background-color 0.2s;
+background-color: #0e6b23;
+color: #fff;
+padding: 15px 30px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+font-size: 1rem;
+font-weight: 600;
+transition: background-color 0.2s;
 }
 
 .contact-form button:hover {
-    background-color: #064a19;
+background-color: #064a19;
 }
 
 .contact-info {
-    flex: 1 1 300px;
-    max-width: 400px;
+flex: 1 1 300px;
+max-width: 400px;
 }
 
 .contact-info h3 {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-    color: #0e6b23;
+font-size: 1.8rem;
+margin-bottom: 20px;
+color: #0e6b23;
 }
 
 .contact-info p {
-    font-size: 1rem;
-    margin-bottom: 10px;
-    color: #0e6b23;
-    display: flex;
-    align-items: center;
+font-size: 1rem;
+margin-bottom: 10px;
+color: #0e6b23;
+display: flex;
+align-items: center;
 }
 
 .contact-info i {
-    margin-right: 10px;
-    color: #0e6b23;
+margin-right: 10px;
+color: #0e6b23;
 }
 
 /* =============================
-   RESPONSIVE BEHAVIOUR
+  RESPONSIVE BEHAVIOUR
 ============================= */
 
 @media (max-width: 900px) {
 
-    .hero {
-        flex-direction: column;
-        height: auto;
-    }
+.hero {
+flex-direction: column;
+height: auto;
+}
 
-    .hero-left,
-    .hero-right {
-        flex: 1 1 100%;
-        width: 100%;
-        min-height: 250px;
-    }
+.hero-left,
+.hero-right {
+flex: 1 1 100%;
+width: 100%;
+min-height: 250px;
+}
 
-    nav {
-        gap: 20px;
-    }
+nav {
+gap: 20px;
+}
 
-    .about-section {
-        flex-direction: column;
-    }
+.about-section {
+flex-direction: column;
+}
 
-    .contact-section {
-        flex-direction: column;
-    }
+.contact-section {
+flex-direction: column;
+}
 }
