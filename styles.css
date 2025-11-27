@@ -51,52 +51,160 @@ width: 100%;
 scroll-margin-top: 100px;
 }
 
-
+/* =============================
+  HERO SECTION — 33% / 66%
+============================= */
+/* =============================
+  HERO SECTION — 33% / 66%
+============================= */
 
 /* --- Hero Component Structure --- */
 .hero {
-    width: 100%;
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    display: flex;
+    /* Use calc(100vh - 60px) if header height is consistently 60px, 
+       or simply 100vh for full height. I'll use 100vh here for simplicity 
+       and let the content adjust for the fixed header (scroll-margin-top). */
+    height: 100vh; 
+    margin-top: 0;
+    align-items: stretch; 
+    padding: 0;
+    overflow: hidden; 
+}
+
+/* --- LEFT SIDE: Logo/Identity Section (33%) --- */
+.hero-left {
+    flex: 0 0 33%;
+    background-color: var(--primary-green); 
+    height: 100%;
+    display: flex;
+    justify-content: center; /* Centering the logo again for clean look */
+    align-items: center;
+    padding: 0;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1); 
+}
+
+/* --- RIGHT SIDE: Content & Image Section (67%) --- */
+.hero-right {
+    flex: 1; /* Allows the right side to take up the remaining space */
+    background-color: var(--light-greenish-white);
+    height: 100%; /* Ensure it spans full height */
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: 60px;
-    color: white;
+    align-items: flex-start;
+    padding: 0 8%; 
+    position: relative;
+    z-index: 1;
 }
 
-.hero-content {
-    max-width: 600px;
+/* 🚨 CRITICAL FIX: Background image with correct path and full opacity */
+.hero-right::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* ⚠️ YOU MUST REPLACE THIS URL with your actual crops image path! */
+    background: url("4d8d7eba-c59c-48bb-869a-b4f621e22f22.png") center center / cover no-repeat;
+    z-index: -1;
+    /* This ensures the image is visible */
+    opacity: 1; 
+    background-color: transparent; 
+}
+
+/* Optional: Re-add your text styling for H1 and P here if you want the overlay effect */
+.hero-right h1 {
+    z-index: 2; /* Ensure text is above the image and overlay */
+    color: white; /* Change text to white for contrast against the dark overlay */
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Stronger shadow */
+    /* ... other styles */
+}
+
+.hero-right p {
     z-index: 2;
+    color: #f7fbf2; /* Light color for contrast */
+    /* ... other styles */
 }
 
-.hero-content h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-}
-
-.hero-content p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-}
-
+/* --- Button Styling --- */
 .btn {
-    display: inline-block;
-    padding: 12px 28px;
-    background-color: #0e6b23;
-    color: white;
-    border-radius: 5px;
+    background-color: var(--primary-green);
+    color: var(--off-white); /* Use off-white for button text */
+    padding: 15px 35px; /* Slightly more padding */
+    border: none;
+    border-radius: 8px; /* Slightly more rounded corners */
     text-decoration: none;
-    font-weight: 600;
-    transition: 0.2s;
+    font-size: 1.05rem;
+    font-weight: 700; /* Bolder text */
+    letter-spacing: 0.5px; /* Subtle letter spacing */
+    cursor: pointer;
+    /* Added a subtle box shadow to make the button lift off the page */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+    transition: all 0.3s ease; /* Smoother transition */
+}
+
+/* Positioning the button (assuming this is part of the accordion content now) */
+.hero-right .btn {
+    /* If this is a static hero, this absolute positioning might be disruptive. 
+    It's best to remove it unless it's strictly necessary for the accordion functionality. */
+    position: static; 
+    /* Remove absolute positioning lines unless required for specific accordion layout: 
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 40px; 
+    z-index: 10; */
 }
 
 .btn:hover {
-    background-color: #064a19;
+    background-color: var(--secondary-green); /* Darker green on hover */
+    /* Lift the button slightly on hover */
+    transform: translateY(-2px); 
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
+/* =============================
+  FEATURES SECTION (HOME)
+============================= */
+
+.features {
+text-align: center;
+padding: 80px 10%;
+background-color: #f8fbe8;
 }
 
+.features h2 {
+font-size: 2.5rem;
+color: #0e6b23;
+margin-bottom: 40px;
+}
+
+.feature-grid {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 40px;
+}
+
+.feature-item {
+flex: 1 1 220px;
+max-width: 250px;
+}
+
+.feature-item i {
+font-size: 50px;
+color: #0e6b23;
+}
+
+.feature-item h3 {
+font-size: 1.5rem;
+margin: 20px 0 10px;
+color: #0e6b23;
+}
+
+.feature-item p {
+font-size: 1rem;
+color: #0e6b23;
+}
 
 /* =============================
   ABOUT SECTION
