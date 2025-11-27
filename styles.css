@@ -108,7 +108,7 @@ scroll-margin-top: 100px;
 /* --- Button Styling for Hero Right (Centered over image) --- */
 
 /* 1. Remove the old absolute positioning from the button */
-.hero-right .btn {
+/*.hero-right .btn {
     /* If you want the button to simply flow below H1/P text: 
     position: relative; 
     margin-top: 20px;
