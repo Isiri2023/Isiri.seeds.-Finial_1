@@ -54,9 +54,7 @@ scroll-margin-top: 100px;
 /* =============================
  HERO SECTION — 33% / 66%
 ============================= */
-/* =============================
-  HERO SECTION — 33% / 66%
-============================= */
+
 
 /* --- Hero Component Structure --- */
 .hero {
@@ -72,15 +70,21 @@ overflow: hidden;
 }
 
 /* --- LEFT SIDE: Logo/Identity Section (33%) --- */
+/* --- LEFT SIDE: Logo/Identity Section (33%) --- */
 .hero-left {
-flex: 0 0 33%;
-background-color: var(--primary-green); 
-height: 100%;
-display: flex;
-justify-content: center; /* Centering the logo again for clean look */
-align-items: center;
-padding: 0;
-box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1); 
+    flex: 0 0 33%;
+    background-color: var(--primary-green); 
+    height: 100%;
+    display: flex;
+    /* 1. 🚨 CHANGE: Align items to the start (left) */
+    justify-content: flex-start; 
+    align-items: center;
+    /* 2. 🚨 ADD PADDING: Give space on the left and control the gap on the right */
+    padding: 0 5% 0 8%; /* Top, Right, Bottom, Left. Adjust '8%' for desired left margin. */
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1); 
+    color: var(--off-white); 
+    text-align: left; /* 3. Ensure any inner text aligns left */
+
 }
 
 /* --- RIGHT SIDE: Content & Image Section (67%) --- */
