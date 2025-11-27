@@ -67,14 +67,17 @@ scroll-margin-top: 100px;
   HERO SECTION — 33% / 67%
 ============================= */
 
+/* =============================
+  HERO SECTION — 33% / 67%
+============================= */
+
 /* --- Hero Component Structure --- */
 .hero {
     display: flex;
-    /* 🚨 FIX: Subtracting 60px from 100vh for a perfect fit below the header */
+    /* Uses the full height of the viewport minus the 60px header */
     height: calc(100vh - 60px); 
-    /* 🚨 FIX: Push the hero section down by the header's height */
-    margin-top: 60px; 
-    align-items: stretch; /* Ensures children fill the height */
+    margin-top: 60px; /* Push content down past the fixed header */
+    align-items: stretch; 
     padding: 0;
     overflow: hidden; 
 }
@@ -85,10 +88,9 @@ scroll-margin-top: 100px;
     background-color: var(--primary-green); 
     height: 100%;
     display: flex;
-    /* Aligns logo to the left side */
+    /* Retains the left-aligned logo you asked for */
     justify-content: flex-start; 
-    align-items: center; /* Centers logo vertically */
-    /* Padding for left margin (8%) and right gap (5%) */
+    align-items: center; 
     padding: 0 5% 0 8%; 
     box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1); 
     color: var(--off-white); 
@@ -97,20 +99,22 @@ scroll-margin-top: 100px;
 
 /* --- RIGHT SIDE: Content & Image Section (67%) --- */
 .hero-right {
-    /* 🚨 CLEANUP: Using flex: 1 to ensure it takes up the rest of the space (67%) */
-    flex: 1; 
+    flex: 1; /* Takes up the rest of the space */
     background-color: var(--light-greenish-white);
     height: 100%; 
     display: flex;
     flex-direction: column;
+    /* 🚨 FIX: Center the text and button horizontally */
     justify-content: center;
-    align-items: flex-start;
+    /* 🚨 FIX: Center the text and button vertically */
+    align-items: center; 
     padding: 0 8%; 
     position: relative;
     z-index: 1;
+    text-align: center; /* Ensures text blocks are centered */
 }
 
-/* 🚨 Background image and Overlay */
+/* 🚨 Background image and Overlay for High Contrast */
 .hero-right::before {
     content: "";
     position: absolute;
@@ -122,49 +126,54 @@ scroll-margin-top: 100px;
     background: url("4d8d7eba-c59c-48bb-869a-b4f621e22f22.png") center center / cover no-repeat;
     z-index: -1;
     opacity: 1; 
-    /* Optional: Add a dark overlay here if you plan to add text/h1/p tags later */
-    /* background-color: rgba(0, 0, 0, 0.3); */ 
+    /* 🚨 ENHANCEMENT: Darker overlay for better white text readability (Sagi Seeds look) */
+    background-color: rgba(0, 0, 0, 0.4); 
 }
 
-/* Text Styling over Image (If used) */
+/* Text Styling over Image (for Sagi Seeds look) */
 .hero-right h1 {
     z-index: 2; 
+    /* 🚨 ENHANCEMENT: Large, bold white text for high impact */
+    font-size: 4rem; 
     color: white; 
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5); 
+    margin-bottom: 25px;
+    line-height: 1.1;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.9); /* Stronger shadow */
 }
 
 .hero-right p {
     z-index: 2;
-    color: #f7fbf2; 
+    /* 🚨 ENHANCEMENT: Clear white supporting text */
+    font-size: 1.3rem;
+    color: var(--off-white); 
+    max-width: 700px;
+    margin-bottom: 40px;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
 }
 
-/* --- Button Styling --- */
+/* --- Button Styling (Ensures high visibility) --- */
 .btn {
     background-color: var(--primary-green);
     color: var(--off-white);
-    padding: 15px 35px;
+    padding: 18px 40px; /* Slightly larger button */
     border: none;
     border-radius: 8px;
     text-decoration: none;
-    font-size: 1.05rem;
+    font-size: 1.1rem;
     font-weight: 700;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.8px;
     cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+    z-index: 2; /* Ensure button is above the image/overlay */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); /* Prominent shadow */
     transition: all 0.3s ease; 
 }
 
-.hero-right .btn {
-    /* Keeps the button flowing naturally with content (h1/p) */
-    position: static; 
-} 
-
-
 .btn:hover {
     background-color: var(--secondary-green); 
-    transform: translateY(-2px); 
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+    transform: translateY(-3px); /* Stronger lift on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
 }
+n
 /* =============================
  FEATURES SECTION (HOME)
 ============================= */
