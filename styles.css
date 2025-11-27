@@ -54,111 +54,116 @@ scroll-margin-top: 100px;
 /* =============================
  HERO SECTION — 33% / 66%
 ============================= */
+/* --- Color Variables (Assuming you have these defined globally) --- */
+/* :root {
+    --primary-green: #0e6b23;
+    --secondary-green: #064a19;
+    --off-white: #f8fbec;
+    --light-greenish-white: #f7fbf2;
+} 
+*/
 
+/* =============================
+  HERO SECTION — 33% / 67%
+============================= */
 
 /* --- Hero Component Structure --- */
 .hero {
-display: flex;
-/* Use calc(100vh - 60px) if header height is consistently 60px, 
-      or simply 100vh for full height. I'll use 100vh here for simplicity 
-      and let the content adjust for the fixed header (scroll-margin-top). */
-height: 100vh; 
-margin-top: 0;
-align-items: stretch; 
-padding: 0;
-overflow: hidden; 
+    display: flex;
+    /* 🚨 FIX: Subtracting 60px from 100vh for a perfect fit below the header */
+    height: calc(100vh - 60px); 
+    /* 🚨 FIX: Push the hero section down by the header's height */
+    margin-top: 60px; 
+    align-items: stretch; /* Ensures children fill the height */
+    padding: 0;
+    overflow: hidden; 
 }
 
 /* --- LEFT SIDE: Logo/Identity Section (33%) --- */
-/* --- LEFT SIDE: Logo/Identity Section (33%) --- */
 .hero-left {
-    flex: 0 0 33%;
+    flex: 0 0 33%; /* Fixed 33% width */
     background-color: var(--primary-green); 
     height: 100%;
     display: flex;
-    /* 1. 🚨 CHANGE: Align items to the start (left) */
+    /* Aligns logo to the left side */
     justify-content: flex-start; 
-    align-items: center;
-    /* 2. 🚨 ADD PADDING: Give space on the left and control the gap on the right */
-    padding: 0 5% 0 8%; /* Top, Right, Bottom, Left. Adjust '8%' for desired left margin. */
+    align-items: center; /* Centers logo vertically */
+    /* Padding for left margin (8%) and right gap (5%) */
+    padding: 0 5% 0 8%; 
     box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1); 
     color: var(--off-white); 
-    text-align: left; /* 3. Ensure any inner text aligns left */
-
+    text-align: left; 
 }
 
 /* --- RIGHT SIDE: Content & Image Section (67%) --- */
 .hero-right {
-    flex: 0 0 66%; /* Allows the right side to take up the remaining space */
-    flex: 1; /* Allows the right side to take up the remaining space */
-background-color: var(--light-greenish-white);
-height: 100%; /* Ensure it spans full height */
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: flex-start;
-padding: 0 8%; 
-position: relative;
-z-index: 1;
+    /* 🚨 CLEANUP: Using flex: 1 to ensure it takes up the rest of the space (67%) */
+    flex: 1; 
+    background-color: var(--light-greenish-white);
+    height: 100%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 8%; 
+    position: relative;
+    z-index: 1;
 }
 
-/* 🚨 CRITICAL FIX: Background image with correct path and full opacity */
+/* 🚨 Background image and Overlay */
 .hero-right::before {
-content: "";
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-/* ⚠️ YOU MUST REPLACE THIS URL with your actual crops image path! */
-background: url("4d8d7eba-c59c-48bb-869a-b4f621e22f22.png") center center / cover no-repeat;
-z-index: -1;
-/* This ensures the image is visible */
-opacity: 1; 
-background-color: transparent; 
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Ensure this URL is correct */
+    background: url("4d8d7eba-c59c-48bb-869a-b4f621e22f22.png") center center / cover no-repeat;
+    z-index: -1;
+    opacity: 1; 
+    /* Optional: Add a dark overlay here if you plan to add text/h1/p tags later */
+    /* background-color: rgba(0, 0, 0, 0.3); */ 
 }
 
-/* Optional: Re-add your text styling for H1 and P here if you want the overlay effect */
+/* Text Styling over Image (If used) */
 .hero-right h1 {
-z-index: 2; /* Ensure text is above the image and overlay */
-color: white; /* Change text to white for contrast against the dark overlay */
-text-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Stronger shadow */
-/* ... other styles */
+    z-index: 2; 
+    color: white; 
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5); 
 }
 
 .hero-right p {
-z-index: 2;
-color: #f7fbf2; /* Light color for contrast */
-/* ... other styles */
+    z-index: 2;
+    color: #f7fbf2; 
 }
 
 /* --- Button Styling --- */
 .btn {
-background-color: var(--primary-green);
-color: var(--off-white); /* Use off-white for button text */
-padding: 15px 35px; /* Slightly more padding */
-border: none;
-border-radius: 8px; /* Slightly more rounded corners */
-text-decoration: none;
-font-size: 1.05rem;
-font-weight: 700; /* Bolder text */
-letter-spacing: 0.5px; /* Subtle letter spacing */
-cursor: pointer;
-/* Added a subtle box shadow to make the button lift off the page */
-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
-transition: all 0.3s ease; /* Smoother transition */
+    background-color: var(--primary-green);
+    color: var(--off-white);
+    padding: 15px 35px;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+    transition: all 0.3s ease; 
 }
 
 .hero-right .btn {
-    position: static;
+    /* Keeps the button flowing naturally with content (h1/p) */
+    position: static; 
 } 
 
 
 .btn:hover {
-background-color: var(--secondary-green); /* Darker green on hover */
-/* Lift the button slightly on hover */
-transform: translateY(-2px); 
-box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+    background-color: var(--secondary-green); 
+    transform: translateY(-2px); 
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
 }
 /* =============================
  FEATURES SECTION (HOME)
