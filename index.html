@@ -117,25 +117,25 @@ testing, and handling.</p>
         </section>
     </main>
     <!-- Slideshow script -->
-    <script>
-        const slideImages = [
-            'slide2.jpg',
-            'slide3.jpg',
-            'slide4.jpg',
-            'slide5.jpg'
-        ];
-        let slideIndex = 0;
-        const heroRight = document.querySelector('.hero-right');
-        function setSlide() {
-            heroRight.style.backgroundImage = `url('${slideImages[slideIndex]}')`;
-            heroRight.style.backgroundSize = 'cover';
-            heroRight.style.backgroundRepeat = 'no-repeat';
-            heroRight.style.backgroundPosition = 'center';
-            slideIndex = (slideIndex + 1) % slideImages.length;
+    
+    const accHeaders = document.querySelectorAll(".accordion-header");
+
+accHeaders.forEach(header => {
+    header.addEventListener("click", () => {
+
+        const content = header.nextElementSibling;
+
+        document.querySelectorAll(".accordion-content").forEach(c => {
+            if (c !== content) c.style.maxHeight = null;
+        });
+
+        if (content.style.maxHeight) {
+            content.style.maxHeight = null;
+        } else {
+            content.style.maxHeight = content.scrollHeight + "px";
         }
-        // Initialize slideshow
-        setSlide();
-        setInterval(setSlide, 5000);
-    </script>
+    });
+});
+
 </body>
 </html>

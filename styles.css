@@ -70,110 +70,149 @@ scroll-margin-top: 100px;
 /* =============================
   HERO SECTION — 33% / 67%
 ============================= */
-
-/* --- Hero Component Structure --- */
+/* ===============================
+   HERO WRAPPER (Same layout as SagiSeeds)
+================================ */
 .hero {
     display: flex;
-    /* Uses the full height of the viewport minus the 60px header */
-    height: calc(100vh - 60px); 
-    margin-top: 60px; /* Push content down past the fixed header */
-    align-items: stretch; 
-    padding: 0;
-    overflow: hidden; 
+    height: 100vh;
+    margin-top: 0;
+    overflow: hidden;
 }
 
-/* --- LEFT SIDE: Logo/Identity Section (33%) --- */
+/* ===============================
+   LEFT COLUMN — LOGO BLOCK
+================================ */
 .hero-left {
-    flex: 0 0 33%; /* Fixed 33% width */
-    background-color: var(--primary-green); 
-    height: 100%;
+    width: 33%;
+    background: var(--primary-green);
     display: flex;
-    /* Retains the left-aligned logo you asked for */
-    justify-content: flex-start; 
-    align-items: center; 
-    padding: 0 5% 0 8%; 
-    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1); 
-    color: var(--off-white); 
-    text-align: left; 
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    box-shadow: 4px 0 10px rgba(0,0,0,0.1);
 }
 
-/* --- RIGHT SIDE: Content & Image Section (67%) --- */
+.hero-left img {
+    width: 70%;
+    height: auto;
+}
+
+/* ===============================
+   RIGHT COLUMN — TEXT + ACCORDION
+================================ */
 .hero-right {
-    flex: 1; /* Takes up the rest of the space */
-    background-color: var(--light-greenish-white);
-    height: 100%; 
+    width: 67%;
+    position: relative;
+    padding: 80px 6%;
     display: flex;
     flex-direction: column;
-    /* 🚨 FIX: Center the text and button horizontally */
     justify-content: center;
-    /* 🚨 FIX: Center the text and button vertically */
-    align-items: center; 
-    padding: 0 8%; 
-    position: relative;
-    z-index: 1;
-    text-align: center; /* Ensures text blocks are centered */
+    color: white;
 }
 
-/* 🚨 Background image and Overlay for High Contrast */
+/* Background image (same style as SagiSeeds) */
 .hero-right::before {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    /* Ensure this URL is correct */
-    background: url("4d8d7eba-c59c-48bb-869a-b4f621e22f22.png") center center / cover no-repeat;
-    z-index: -1;
-    opacity: 1; 
-    /* 🚨 ENHANCEMENT: Darker overlay for better white text readability (Sagi Seeds look) */
-    background-color: rgba(0, 0, 0, 0.4); 
+    inset: 0;
+    background: url("4d8d7eba-c59c-48bb-869a-b4f621e22f22.png") center/cover no-repeat;
+    z-index: -2;
 }
 
-/* Text Styling over Image (for Sagi Seeds look) */
+/* Dark gradient overlay */
+.hero-right::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom right,
+        rgba(0,0,0,0.65),
+        rgba(0,0,0,0.35)
+    );
+    z-index: -1;
+}
+
+/* ===============================
+   HERO TEXT STYLING (Matches SagiSeeds)
+================================ */
 .hero-right h1 {
-    z-index: 2; 
-    /* 🚨 ENHANCEMENT: Large, bold white text for high impact */
-    font-size: 4rem; 
-    color: white; 
-    margin-bottom: 25px;
-    line-height: 1.1;
-    text-shadow: 0 0 8px rgba(0, 0, 0, 0.9); /* Stronger shadow */
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    text-transform: uppercase;
 }
 
 .hero-right p {
-    z-index: 2;
-    /* 🚨 ENHANCEMENT: Clear white supporting text */
-    font-size: 1.3rem;
-    color: var(--off-white); 
-    max-width: 700px;
-    margin-bottom: 40px;
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+    font-size: 1.1rem;
+    max-width: 520px;
+    margin-bottom: 25px;
+    opacity: 0.9;
 }
 
-/* --- Button Styling (Ensures high visibility) --- */
+/* ===============================
+   BUTTON (Same look as SagiSeeds)
+================================ */
 .btn {
-    background-color: var(--primary-green);
-    color: var(--off-white);
-    padding: 18px 40px; /* Slightly larger button */
+    background: var(--primary-green);
+    color: white;
+    padding: 14px 32px;
     border: none;
-    border-radius: 8px;
-    text-decoration: none;
-    font-size: 1.1rem;
+    border-radius: 6px;
     font-weight: 700;
-    letter-spacing: 0.8px;
+    font-size: 1rem;
     cursor: pointer;
-    z-index: 2; /* Ensure button is above the image/overlay */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); /* Prominent shadow */
-    transition: all 0.3s ease; 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    transition: 0.3s ease;
 }
 
 .btn:hover {
-    background-color: var(--secondary-green); 
-    transform: translateY(-3px); /* Stronger lift on hover */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    background: var(--secondary-green);
+    transform: translateY(-3px);
 }
-n
+
+/* ===============================
+   ACCORDION SECTION (Matches SagiSeeds)
+================================ */
+.accordion {
+    margin-top: 35px;
+    width: 90%;
+}
+
+.accordion-item {
+    margin-bottom: 10px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.accordion-header {
+    width: 100%;
+    padding: 15px 18px;
+    text-align: left;
+    background: rgba(0,0,0,0.4);
+    border: none;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+    background: rgba(0,0,0,0.25);
+    padding: 0 18px;
+}
+
+.accordion-content img {
+    width: 100%;
+    margin: 18px 0;
+    border-radius: 6px;
+}
+
 /* =============================
  FEATURES SECTION (HOME)
 ============================= */
