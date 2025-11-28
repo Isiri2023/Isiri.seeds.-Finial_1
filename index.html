@@ -119,25 +119,28 @@ testing, and handling.</p>
     <!-- Slideshow script -->
 
     <script>
-        const slideImages = [
-            'slide2.jpg',
-            'slide3.jpg',
-            'slide4.jpg',
-            'slide5.jpg'
-        ];
-        let slideIndex = 0;
-        const heroRight = document.querySelector('.hero-right');
-        function setSlide() {
-            heroRight.style.backgroundImage = `url('${slideImages[slideIndex]}')`;
-            heroRight.style.backgroundSize = 'cover';
-            heroRight.style.backgroundRepeat = 'no-repeat';
-            heroRight.style.backgroundPosition = 'center';
-            slideIndex = (slideIndex + 1) % slideImages.length;
-        }
-        // Initialize slideshow
-        setSlide();
-        setInterval(setSlide, 5000);
-    </script>
+    const slideImages = [
+        'slide2.jpg',
+        'slide3.jpg',
+        'slide4.jpg',
+        'slide5.jpg'
+    ];
+
+    let slideIndex = 0;
+    const heroRight = document.querySelector('.hero-right');
+
+    function setSlide() {
+        heroRight.style.backgroundImage = `url('${slideImages[slideIndex]}')`;
+        heroRight.style.backgroundSize = 'cover';
+        heroRight.style.backgroundRepeat = 'no-repeat';
+        heroRight.style.backgroundPosition = 'center';
+        slideIndex = (slideIndex + 1) % slideImages.length;
+    }
+
+    setSlide();
+    setInterval(setSlide, 5000);
+</script>
+
 
 </body>
 </html>
