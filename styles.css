@@ -742,43 +742,41 @@ padding-top: 18px;
 
 .submit-button {
 width: 100%;
-padding: 18px 40px;
+padding: 18px 30px;
 border: none;
-border-radius: 25px;
+border-radius: 12px;
 font-size: 1rem;
 font-weight: 600;
 cursor: pointer;
-display: flex;
-align-items: center;
-justify-content: center;
-gap: 12px;
-transition: all 0.3s ease;
+display: block;
+text-align: center;
 margin-top: 25px;
-background: linear-gradient(135deg, #4CAF50, #8BC34A);
-color: white;
-box-shadow: 0 8px 25px rgba(76, 175, 80, 0.3);
-position: relative;
-z-index: 10;
+background-color: #4CAF50 !important;
+color: white !important;
+box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+transition: all 0.3s ease;
+min-height: 50px;
+line-height: 1.2;
 }
 
 .submit-button:hover {
-transform: translateY(-3px);
-box-shadow: 0 15px 40px rgba(76, 175, 80, 0.5);
-background: linear-gradient(135deg, #2E7D32, #4CAF50);
+background-color: #2E7D32 !important;
+transform: translateY(-2px);
+box-shadow: 0 8px 25px rgba(76, 175, 80, 0.4);
+}
+
+.submit-button .btn-text {
+display: inline;
+margin-right: 8px;
 }
 
 .submit-button i {
+display: inline;
 transition: transform 0.3s ease;
 }
 
 .submit-button:hover i {
-animation: arrowMove 0.6s ease-in-out;
-}
-
-@keyframes arrowMove {
-0% { transform: translateX(0); }
-50% { transform: translateX(5px); }
-100% { transform: translateX(0); }
+transform: translateX(3px);
 }
 
 @keyframes shimmer {
@@ -1349,9 +1347,10 @@ font-size: 0.8rem;
 }
 
 .submit-button {
-padding: 16px 35px;
+padding: 16px 30px;
 font-size: 1rem;
 width: 100%;
+min-height: 50px;
 }
 
 .modern-contact {
@@ -1462,8 +1461,9 @@ font-size: 0.75rem;
 }
 
 .submit-button {
-padding: 15px 30px;
+padding: 15px 25px;
 font-size: 0.95rem;
+min-height: 48px;
 }
 
 .modern-contact {
