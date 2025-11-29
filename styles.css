@@ -78,7 +78,7 @@ scroll-margin-top: 100px;
     height: 100%;
     display: flex;
     justify-content: left; /* Centering the logo again for clean look */
-    align-items: center;
+    align-items: left;
     padding: 0;
     box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1); 
 }
