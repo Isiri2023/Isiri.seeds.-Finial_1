@@ -534,12 +534,12 @@ color: white;
 }
 
 /* =============================
-  ELEGANT GALLERY PAGE
+  COMPACT GALLERY PAGE
 ============================= */
 .gallery-hero {
 position: relative;
-height: 60vh;
-min-height: 400px;
+height: 40vh;
+min-height: 280px;
 background: linear-gradient(135deg, rgba(14,107,35,0.95), rgba(6,74,25,0.9)), url('slide2.jpg');
 background-size: cover;
 background-position: center;
@@ -559,70 +559,86 @@ top: 0;
 left: 0;
 width: 100%;
 height: 100%;
-background: radial-gradient(circle at 30% 70%, rgba(76,175,80,0.3) 0%, transparent 60%),
-            radial-gradient(circle at 70% 30%, rgba(139,195,74,0.2) 0%, transparent 60%);
-animation: heroGlow 8s ease-in-out infinite;
+background: radial-gradient(circle at 30% 70%, rgba(76,175,80,0.2) 0%, transparent 60%);
+animation: heroGlow 6s ease-in-out infinite;
+}
+
+.hero-title {
+font-size: 2.2rem !important;
+font-weight: 700;
+margin-bottom: 8px;
+}
+
+.hero-subtitle {
+font-size: 0.9rem !important;
+opacity: 0.9;
+}
+
+.hero-badge {
+font-size: 0.7rem !important;
+padding: 4px 12px;
+margin-bottom: 12px;
 }
 
 .dynamic-gallery {
-padding: 80px 5%;
-background: linear-gradient(135deg, #f8fbe8 0%, #ffffff 50%, #e8f5e8 100%);
+padding: 50px 5%;
+background: linear-gradient(135deg, #f8fbe8 0%, #ffffff 100%);
 }
 
 .gallery-header {
 text-align: center;
-margin-bottom: 60px;
+margin-bottom: 35px;
 }
 
 .section-title {
-font-size: 2.8rem;
-font-weight: 700;
+font-size: 2rem !important;
+font-weight: 600;
 color: #0e6b23;
-margin-bottom: 20px;
+margin-bottom: 12px;
 position: relative;
 }
 
 .section-title::after {
 content: '';
 position: absolute;
-bottom: -10px;
+bottom: -6px;
 left: 50%;
 transform: translateX(-50%);
-width: 80px;
-height: 4px;
+width: 50px;
+height: 3px;
 background: linear-gradient(90deg, #4CAF50, #8BC34A);
 border-radius: 2px;
 }
 
 .section-desc {
-font-size: 1.1rem;
+font-size: 0.9rem !important;
 color: #666;
-max-width: 600px;
+max-width: 500px;
 margin: 0 auto;
-line-height: 1.6;
+line-height: 1.5;
 }
 
 .masonry-grid {
 display: grid;
-grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-gap: 30px;
-max-width: 1400px;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 20px;
+max-width: 1200px;
 margin: 0 auto;
 }
 
 .gallery-card {
 position: relative;
 background: white;
-border-radius: 20px;
+border-radius: 15px;
 overflow: hidden;
-box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-transition: all 0.4s ease;
+box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+transition: all 0.3s ease;
 cursor: pointer;
 }
 
 .gallery-card:hover {
-transform: translateY(-10px) scale(1.02);
-box-shadow: 0 20px 50px rgba(76,175,80,0.2);
+transform: translateY(-5px);
+box-shadow: 0 15px 35px rgba(76,175,80,0.15);
 }
 
 .image-container {
@@ -632,13 +648,13 @@ overflow: hidden;
 
 .image-container img {
 width: 100%;
-height: 280px;
+height: 200px;
 object-fit: cover;
-transition: transform 0.4s ease;
+transition: transform 0.3s ease;
 }
 
 .gallery-card:hover .image-container img {
-transform: scale(1.1);
+transform: scale(1.05);
 }
 
 .image-overlay {
@@ -647,9 +663,9 @@ top: 0;
 left: 0;
 width: 100%;
 height: 100%;
-background: linear-gradient(135deg, rgba(14,107,35,0.9), rgba(76,175,80,0.7));
+background: linear-gradient(135deg, rgba(14,107,35,0.85), rgba(76,175,80,0.7));
 opacity: 0;
-transition: opacity 0.4s ease;
+transition: opacity 0.3s ease;
 display: flex;
 align-items: center;
 justify-content: center;
@@ -662,9 +678,9 @@ opacity: 1;
 }
 
 .overlay-content {
-padding: 20px;
-transform: translateY(20px);
-transition: transform 0.4s ease 0.1s;
+padding: 15px;
+transform: translateY(15px);
+transition: transform 0.3s ease 0.1s;
 }
 
 .gallery-card:hover .overlay-content {
@@ -672,26 +688,27 @@ transform: translateY(0);
 }
 
 .overlay-content h3 {
-font-size: 1.5rem;
-font-weight: 700;
-margin-bottom: 10px;
+font-size: 1.1rem;
+font-weight: 600;
+margin-bottom: 6px;
 }
 
 .overlay-content p {
-font-size: 1rem;
+font-size: 0.8rem;
 opacity: 0.9;
-margin-bottom: 15px;
+margin-bottom: 10px;
+line-height: 1.4;
 }
 
 .category-tag {
 background: rgba(255,255,255,0.2);
 color: white;
-padding: 6px 15px;
-border-radius: 20px;
-font-size: 0.8rem;
-font-weight: 600;
+padding: 4px 10px;
+border-radius: 12px;
+font-size: 0.7rem;
+font-weight: 500;
 text-transform: uppercase;
-letter-spacing: 1px;
+letter-spacing: 0.5px;
 border: 1px solid rgba(255,255,255,0.3);
 backdrop-filter: blur(10px);
 display: inline-block;
