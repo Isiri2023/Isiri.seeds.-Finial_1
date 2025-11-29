@@ -1287,18 +1287,33 @@ padding: 40px 5%;
 }
 
 /* =============================
-  FOOTER
+  COMPACT ELEGANT FOOTER
 ============================= */
 footer {
-background: #0e6b23;
+background: linear-gradient(135deg, #0e6b23 0%, #064a19 100%);
 color: white;
 text-align: center;
-padding: 20px 5%;
+padding: 12px 5%;
 margin-top: 0;
+border-top: 1px solid rgba(76,175,80,0.2);
+position: relative;
+}
+
+footer::before {
+content: '';
+position: absolute;
+top: 0;
+left: 50%;
+transform: translateX(-50%);
+width: 60px;
+height: 2px;
+background: linear-gradient(90deg, #4CAF50, #8BC34A);
 }
 
 footer p {
 margin: 0;
-font-size: 0.9rem;
-opacity: 0.9;
+font-size: 0.75rem;
+opacity: 0.85;
+font-weight: 400;
+letter-spacing: 0.3px;
 }
