@@ -1,8 +1,7 @@
-* {
-box-sizing: border-box;
-margin: 0;
-padding: 0;
-}
+* {box-sizing: border-box;}
+body {font-family: Verdana, sans-serif;}
+.mySlides {display: none;}
+img {vertical-align: middle;}
 
 body {
 font-family: Arial, sans-serif;
@@ -51,10 +50,7 @@ width: 100%;
 scroll-margin-top: 100px;
 }
 
-* {box-sizing: border-box;}
-body {font-family: Verdana, sans-serif;}
-.mySlides {display: none;}
-img {vertical-align: middle;}
+
 
 /* Slideshow container */
 .slideshow-container {
