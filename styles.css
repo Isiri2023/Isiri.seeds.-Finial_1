@@ -1293,54 +1293,121 @@ padding: 0 15px;
 
 .contact-left,
 .contact-right {
-padding: 15px;
+padding: 10px;
+}
+
+.contact-header {
+text-align: center;
+margin-bottom: 25px;
 }
 
 .contact-title {
 font-size: 1.8rem;
 }
 
+.contact-desc {
+font-size: 0.9rem;
+}
+
+.detail-card {
+padding: 15px;
+margin-bottom: 15px;
+}
+
+.detail-icon {
+width: 35px;
+height: 35px;
+font-size: 0.9rem;
+}
+
+.detail-content h4 {
+font-size: 0.95rem;
+}
+
+.detail-content p {
+font-size: 0.85rem;
+}
+
 .form-row {
 grid-template-columns: 1fr;
-gap: 15px;
+gap: 20px;
 }
 
 .form-container {
 padding: 25px;
+border-radius: 20px;
 }
 
 .header-icon {
 width: 50px;
 height: 50px;
+font-size: 1.3rem;
 }
 
 .form-header h2 {
 font-size: 1.5rem;
 }
 
+.form-header p {
+font-size: 0.9rem;
+}
+
+.input-group {
+margin-bottom: 20px;
+}
+
 .input-group input,
 .input-group textarea {
-padding: 15px 12px 15px 40px;
+padding: 16px 15px 16px 45px;
+font-size: 1rem;
 }
 
 .input-icon {
-left: 12px;
+top: 16px;
+left: 15px;
+font-size: 1rem;
 }
 
 .input-group label {
-left: 40px;
+top: 16px;
+left: 45px;
+font-size: 1rem;
+}
+
+.input-group input:focus + label,
+.input-group input:valid + label,
+.input-group textarea:focus + label,
+.input-group textarea:valid + label {
+top: 2px;
+left: 45px;
+font-size: 0.8rem;
+}
+
+.submit-button {
+padding: 16px 35px;
+font-size: 1rem;
+width: 100%;
 }
 
 .modern-contact {
-padding: 60px 0 30px;
+padding: 80px 0 40px;
 }
 
 .map-section {
-padding: 40px 5%;
+padding: 50px 5%;
+}
+
+.map-section h3 {
+font-size: 1.6rem;
+}
+
+.map-container {
+max-width: 100%;
 }
 
 .map-container iframe {
 height: 250px;
+border-radius: 15px;
 }
 
 .floating-elements {
@@ -1349,31 +1416,101 @@ display: none;
 }
 
 @media (max-width: 480px) {
+.contact-wrapper {
+padding: 0 10px;
+gap: 25px;
+}
+
+.contact-left,
+.contact-right {
+padding: 5px;
+}
+
 .contact-title {
 font-size: 1.6rem;
 }
 
+.contact-badge {
+padding: 3px 10px;
+font-size: 0.65rem;
+}
+
 .detail-card {
-flex-direction: column;
-text-align: center;
-padding: 15px;
+padding: 12px;
+margin-bottom: 12px;
 }
 
 .form-container {
 padding: 20px;
+border-radius: 15px;
+}
+
+.header-icon {
+width: 45px;
+height: 45px;
+font-size: 1.2rem;
+margin-bottom: 15px;
+}
+
+.form-header h2 {
+font-size: 1.4rem;
+margin-bottom: 8px;
+}
+
+.form-header p {
+font-size: 0.85rem;
+}
+
+.modern-form {
+gap: 18px;
+}
+
+.input-group {
+margin-bottom: 18px;
 }
 
 .input-group input,
 .input-group textarea {
-padding: 14px 10px 14px 35px;
+padding: 15px 12px 15px 40px;
+font-size: 0.95rem;
 }
 
 .input-icon {
-left: 10px;
+top: 15px;
+left: 12px;
+font-size: 0.9rem;
 }
 
 .input-group label {
-left: 35px;
+top: 15px;
+left: 40px;
+font-size: 0.95rem;
+}
+
+.input-group input:focus + label,
+.input-group input:valid + label,
+.input-group textarea:focus + label,
+.input-group textarea:valid + label {
+top: 2px;
+left: 40px;
+font-size: 0.75rem;
+}
+
+.submit-button {
+padding: 15px 30px;
+font-size: 0.95rem;
+}
+
+.modern-contact {
+padding: 70px 0 30px;
+}
+
+.map-section {
+padding: 40px 3%;
+}
+
+.map-section h3 {
+font-size: 1.4rem;
 }
 
 .map-container iframe {
