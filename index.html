@@ -85,68 +85,31 @@
 </nav>
 </header>
 
-<!-- Split Hero Section -->
-<section class="hero-slideshow">
-<div class="hero-left">
-<div class="hero-image">
-<img src="newupdatedlogo.png" alt="Premium Seeds">
-<div class="image-badge">Premium Quality</div>
+<!-- Dynamic Hero Section -->
+<section class="elegant-about" style="padding-top: 120px;">
+<div class="about-container">
+<div class="about-image">
+<img src="newupdatedlogo.png" alt="ISIRI Seeds">
+</div>
+<div class="about-content">
+<div class="content-badge">Welcome to ISIRI</div>
+<h2>Premium Quality Seeds for Sustainable Agriculture</h2>
+<p>Leading the way in seed production with 25+ years of expertise. We combine traditional knowledge with modern innovation to deliver superior quality seeds.</p>
+<div class="about-features">
+<div class="about-feature">
+<i class="fas fa-award"></i>
+<span>International Standards</span>
+</div>
+<div class="about-feature">
+<i class="fas fa-seedling"></i>
+<span>Wide Variety</span>
+</div>
+<div class="about-feature">
+<i class="fas fa-leaf"></i>
+<span>Sustainable Practices</span>
 </div>
 </div>
-
-<div class="hero-right">
-<div class="slideshow-container">
-<div class="slide active">
-<img src="slide2.jpg" alt="Greenhouse cultivation">
-<div class="slide-content">
-<div class="slide-badge">Excellence</div>
-<h1>Seed Production</h1>
-<p>Superior quality seeds for sustainable agriculture</p>
-<a href="contact.html" class="cta-btn">Get in Touch</a>
-</div>
-</div>
-
-<div class="slide">
-<img src="slide3.jpg" alt="Field cultivation">
-<div class="slide-content">
-<div class="slide-badge">Innovation</div>
-<h1>Growing Techniques</h1>
-<p>Advanced methods for optimal crop yield</p>
-<a href="services.html" class="cta-btn">Our Services</a>
-</div>
-</div>
-
-<div class="slide">
-<img src="slide4.jpg" alt="Quality assurance">
-<div class="slide-content">
-<div class="slide-badge">Trusted</div>
-<h1>Worldwide Partners</h1>
-<p>25+ years of agricultural expertise</p>
-<a href="about.html" class="cta-btn">Learn More</a>
-</div>
-</div>
-
-<div class="slide">
-<img src="slide5.jpg" alt="Sustainable farming">
-<div class="slide-content">
-<div class="slide-badge">Sustainable</div>
-<h1>Future Agriculture</h1>
-<p>Environmentally conscious practices</p>
-<a href="gallery.html" class="cta-btn">View Gallery</a>
-</div>
-</div>
-
-<div class="slide-nav">
-<button class="nav-btn prev" onclick="changeSlide(-1)"><i class="fas fa-chevron-left"></i></button>
-<button class="nav-btn next" onclick="changeSlide(1)"><i class="fas fa-chevron-right"></i></button>
-</div>
-
-<div class="slide-indicators">
-<span class="indicator active" onclick="currentSlide(1)"></span>
-<span class="indicator" onclick="currentSlide(2)"></span>
-<span class="indicator" onclick="currentSlide(3)"></span>
-<span class="indicator" onclick="currentSlide(4)"></span>
-</div>
+<a href="contact.html" class="learn-more-btn">Get in Touch</a>
 </div>
 </div>
 </section>
@@ -242,50 +205,7 @@
 </div>
 </section>
 
-<script>
-let currentSlideIndex = 0;
-const slides = document.querySelectorAll('.slide');
-const indicators = document.querySelectorAll('.indicator');
-let slideInterval;
 
-function showSlide(index) {
-slides.forEach(slide => slide.classList.remove('active'));
-indicators.forEach(indicator => indicator.classList.remove('active'));
-
-slides[index].classList.add('active');
-indicators[index].classList.add('active');
-}
-
-function nextSlide() {
-currentSlideIndex = (currentSlideIndex + 1) % slides.length;
-showSlide(currentSlideIndex);
-}
-
-function changeSlide(direction) {
-clearInterval(slideInterval);
-currentSlideIndex += direction;
-if (currentSlideIndex >= slides.length) currentSlideIndex = 0;
-if (currentSlideIndex < 0) currentSlideIndex = slides.length - 1;
-showSlide(currentSlideIndex);
-startSlideshow();
-}
-
-function currentSlide(index) {
-clearInterval(slideInterval);
-currentSlideIndex = index - 1;
-showSlide(currentSlideIndex);
-startSlideshow();
-}
-
-function startSlideshow() {
-slideInterval = setInterval(nextSlide, 5000);
-}
-
-// Initialize slideshow
-document.addEventListener('DOMContentLoaded', () => {
-startSlideshow();
-});
-</script>
 
 <footer>
 <p>Copyright © 2025. Isiri Seeds Production Co.</p>
