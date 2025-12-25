@@ -13,21 +13,15 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             line-height: 1.6;
             color: #333;
         }
 
-        /* Header */
         header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            padding: 15px 0;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            background: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
         nav {
@@ -40,238 +34,183 @@
             text-decoration: none;
             color: #2e7d32;
             font-weight: 600;
-            transition: color 0.3s ease;
+            transition: color 0.3s;
         }
 
         nav a:hover {
             color: #1b5e20;
         }
 
-        /* Hero Section */
         .hero {
-            height: 60vh;
             background: linear-gradient(135deg, #2e7d32, #43a047);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
             color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="80" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="60" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
-            animation: float 15s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
+            text-align: center;
+            padding: 60px 20px;
         }
 
         .hero-badge {
             background: rgba(255,255,255,0.2);
-            padding: 8px 20px;
-            border-radius: 25px;
-            font-size: 14px;
-            margin-bottom: 20px;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 12px;
             display: inline-block;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
             margin-bottom: 15px;
         }
 
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
         .hero p {
-            font-size: 1.2rem;
             opacity: 0.9;
         }
 
-        /* About Section */
         .about {
-            padding: 80px 5%;
-            background: #fafafa;
-        }
-
-        .about-container {
+            padding: 60px 5%;
             max-width: 1200px;
             margin: 0 auto;
+        }
+
+        .about-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
+            grid-template-columns: 400px 1fr;
+            gap: 50px;
+            align-items: start;
         }
 
         .logo-section {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             text-align: center;
             position: relative;
         }
 
-        .logo-card {
-            background: white;
-            padding: 50px 30px;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .logo-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #2e7d32, #43a047);
-        }
-
         .logo-text {
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: 900;
             color: #2e7d32;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .logo-sub {
             color: #666;
+            font-size: 14px;
             font-weight: 600;
-            letter-spacing: 1px;
         }
 
-        .quality-badge {
+        .quality-tag {
             position: absolute;
-            bottom: -15px;
+            bottom: -12px;
             left: 50%;
             transform: translateX(-50%);
             background: #2e7d32;
             color: white;
-            padding: 10px 20px;
-            border-radius: 25px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
             font-weight: 600;
-            font-size: 14px;
-            box-shadow: 0 5px 20px rgba(46,125,50,0.3);
         }
 
-        .content-section {
-            padding-left: 20px;
+        .content {
+            padding-top: 20px;
         }
 
-        .section-badge {
+        .badge {
             background: #e8f5e9;
             color: #2e7d32;
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 14px;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 12px;
             font-weight: 600;
             display: inline-block;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
-        .content-section h2 {
-            font-size: 2.5rem;
+        .content h2 {
+            font-size: 2rem;
             color: #1b5e20;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             font-weight: 700;
         }
 
-        .content-section p {
+        .content p {
             color: #555;
+            margin-bottom: 25px;
             line-height: 1.7;
-            margin-bottom: 30px;
         }
 
         .features {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            display: flex;
             gap: 15px;
         }
 
         .feature {
             background: white;
-            padding: 20px 15px;
-            border-radius: 15px;
+            padding: 15px 12px;
+            border-radius: 10px;
             text-align: center;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
-        }
-
-        .feature:hover {
-            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            flex: 1;
         }
 
         .feature i {
-            font-size: 1.5rem;
             color: #2e7d32;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .feature span {
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 600;
             color: #333;
         }
 
-        /* Team Section */
         .team {
-            padding: 80px 5%;
-            background: white;
+            padding: 50px 5% 60px;
+            background: #fafafa;
         }
 
         .team-header {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 40px;
         }
 
         .team-header h2 {
-            font-size: 2.5rem;
+            font-size: 2rem;
             color: #1b5e20;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
 
         .team-grid {
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
         }
 
         .team-card {
             background: white;
-            border-radius: 20px;
-            padding: 30px 25px;
+            padding: 25px 20px;
+            border-radius: 12px;
             text-align: center;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
-            border: 1px solid #f0f0f0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
         }
 
         .team-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 60px rgba(46,125,50,0.15);
+            transform: translateY(-5px);
         }
 
         .avatar {
-            width: 70px;
-            height: 70px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #2e7d32, #43a047);
-            margin: 0 auto 20px;
+            background: #2e7d32;
+            margin: 0 auto 15px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -279,47 +218,46 @@
         }
 
         .avatar img {
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
-            object-fit: cover;
         }
 
-        .experience {
+        .exp-tag {
             position: absolute;
-            top: -5px;
-            right: -5px;
+            top: -3px;
+            right: -3px;
             background: #ff6b35;
             color: white;
-            font-size: 10px;
-            padding: 3px 6px;
-            border-radius: 8px;
+            font-size: 9px;
+            padding: 2px 5px;
+            border-radius: 6px;
             font-weight: 700;
         }
 
         .team-card h3 {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: #1b5e20;
             margin-bottom: 5px;
         }
 
         .role {
             color: #2e7d32;
+            font-size: 13px;
             font-weight: 600;
-            font-size: 14px;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
-        .description {
-            font-size: 13px;
+        .desc {
+            font-size: 12px;
             color: #666;
+            margin-bottom: 15px;
             line-height: 1.5;
-            margin-bottom: 20px;
         }
 
         .skills {
             display: flex;
-            gap: 8px;
+            gap: 6px;
             justify-content: center;
             flex-wrap: wrap;
         }
@@ -327,27 +265,31 @@
         .skill {
             background: #f1f8e9;
             color: #2e7d32;
-            padding: 5px 10px;
-            border-radius: 12px;
-            font-size: 11px;
+            padding: 3px 8px;
+            border-radius: 10px;
+            font-size: 10px;
             font-weight: 600;
         }
 
-        /* Footer */
         footer {
             background: #1b5e20;
             color: white;
             text-align: center;
-            padding: 30px 20px;
+            padding: 25px;
+            font-size: 14px;
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            .about-container { grid-template-columns: 1fr; gap: 40px; }
-            .content-section { padding-left: 0; }
-            .features { grid-template-columns: 1fr; }
-            nav { gap: 20px; flex-wrap: wrap; }
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .features {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
@@ -363,27 +305,23 @@
     </header>
 
     <section class="hero">
-        <div class="hero-content">
-            <div class="hero-badge">ABOUT ISIRI</div>
-            <h1>Growing Excellence</h1>
-            <p>Premium quality seeds for sustainable agriculture</p>
-        </div>
+        <div class="hero-badge">ABOUT ISIRI</div>
+        <h1>Growing Excellence</h1>
+        <p>Premium quality seeds for sustainable agriculture</p>
     </section>
 
     <section class="about">
-        <div class="about-container">
+        <div class="about-grid">
             <div class="logo-section">
-                <div class="logo-card">
-                    <div class="logo-text">ISIRI</div>
-                    <div class="logo-sub">SEEDS PRODUCTION CO.</div>
-                </div>
-                <div class="quality-badge">100% Quality Seeds</div>
+                <div class="logo-text">ISIRI</div>
+                <div class="logo-sub">SEEDS PRODUCTION CO.</div>
+                <div class="quality-tag">100% Quality Seeds</div>
             </div>
             
-            <div class="content-section">
-                <div class="section-badge">Our Story</div>
+            <div class="content">
+                <div class="badge">Our Story</div>
                 <h2>Quality First, Always</h2>
-                <p>ISIRI is dedicated to producing superior quality seeds. We combine our team expertise with farmers skills to deliver best quality seeds as per global standards. Our focus is on producing disease-free, high-quality seeds that meets our customers requirement. At Isiri, Every plant during seed production goes through rigorous quality checks to ensure purity, performance, and consistency. We work closely with growers to understand their evolving needs. With innovation at the core, Isiri aims to empower farmers and contribute to the future of efficient and resilient agriculture</p>
+                <p>ISIRI is dedicated to producing superior quality seeds. We combine our team expertise with farmers skills to deliver best quality seeds as per global standards. Our focus is on producing disease-free, high-quality seeds that meets our customers requirement. At Isiri, Every plant during seed production goes through rigorous quality checks to ensure purity, performance, and consistency.</p>
                 
                 <div class="features">
                     <div class="feature">
@@ -405,7 +343,7 @@
 
     <section class="team">
         <div class="team-header">
-            <div class="section-badge">Leadership</div>
+            <div class="badge">Leadership</div>
             <h2>Expert Team</h2>
         </div>
         
@@ -413,11 +351,11 @@
             <div class="team-card">
                 <div class="avatar">
                     <img src="founder.jpg" alt="Founder">
-                    <div class="experience">30+ Years</div>
+                    <div class="exp-tag">30+</div>
                 </div>
                 <h3>Basavaraj Hundekar</h3>
                 <div class="role">Founder & CEO</div>
-                <p class="description">Master's in Agriculture and Business Administration with experience of over 30 years in seed production for overseas MNCs.</p>
+                <p class="desc">Master's in Agriculture and Business Administration with 30+ years experience in seed production.</p>
                 <div class="skills">
                     <span class="skill">Seed Production</span>
                     <span class="skill">Leadership</span>
@@ -426,12 +364,12 @@
             
             <div class="team-card">
                 <div class="avatar">
-                    <img src="director.jpg" alt="Team Manager">
-                    <div class="experience">10+ Years</div>
+                    <img src="director.jpg" alt="Manager">
+                    <div class="exp-tag">10+</div>
                 </div>
                 <h3>Sanjeev Kumar Patil</h3>
                 <div class="role">Team Manager</div>
-                <p class="description">Master's in Agriculture with expertise in agronomy and crop management.</p>
+                <p class="desc">Master's in Agriculture with expertise in agronomy and crop management.</p>
                 <div class="skills">
                     <span class="skill">Agronomy</span>
                     <span class="skill">Management</span>
@@ -440,12 +378,12 @@
             
             <div class="team-card">
                 <div class="avatar">
-                    <img src="director.jpg" alt="Team Member">
-                    <div class="experience">Expert</div>
+                    <img src="director.jpg" alt="Member">
+                    <div class="exp-tag">Expert</div>
                 </div>
                 <h3>Hanumesh G.</h3>
                 <div class="role">Team Member</div>
-                <p class="description">Specializes in crop management and field quality operations.</p>
+                <p class="desc">Specializes in crop management and field quality operations.</p>
                 <div class="skills">
                     <span class="skill">Crop Management</span>
                     <span class="skill">Field Quality</span>
@@ -454,12 +392,12 @@
             
             <div class="team-card">
                 <div class="avatar">
-                    <img src="director.jpg" alt="Team Member">
-                    <div class="experience">Expert</div>
+                    <img src="director.jpg" alt="Member">
+                    <div class="exp-tag">Expert</div>
                 </div>
                 <h3>Manjunath N.</h3>
                 <div class="role">Team Member</div>
-                <p class="description">Specializes in crop management and field quality operations.</p>
+                <p class="desc">Specializes in crop management and field quality operations.</p>
                 <div class="skills">
                     <span class="skill">Crop Management</span>
                     <span class="skill">Field Quality</span>
@@ -468,12 +406,12 @@
             
             <div class="team-card">
                 <div class="avatar">
-                    <img src="director.jpg" alt="Team Member">
-                    <div class="experience">Expert</div>
+                    <img src="director.jpg" alt="Member">
+                    <div class="exp-tag">Expert</div>
                 </div>
                 <h3>Manjunath R.</h3>
                 <div class="role">Team Member</div>
-                <p class="description">Specializes in crop management and field quality operations.</p>
+                <p class="desc">Specializes in crop management and field quality operations.</p>
                 <div class="skills">
                     <span class="skill">Crop Management</span>
                     <span class="skill">Field Quality</span>
@@ -482,12 +420,12 @@
             
             <div class="team-card">
                 <div class="avatar">
-                    <img src="director.jpg" alt="Team Member">
-                    <div class="experience">Expert</div>
+                    <img src="director.jpg" alt="Member">
+                    <div class="exp-tag">Expert</div>
                 </div>
                 <h3>Siddappa G.</h3>
                 <div class="role">Team Member</div>
-                <p class="description">Specializes in crop management and field quality operations.</p>
+                <p class="desc">Specializes in crop management and field quality operations.</p>
                 <div class="skills">
                     <span class="skill">Crop Management</span>
                     <span class="skill">Field Quality</span>
@@ -496,29 +434,29 @@
             
             <div class="team-card">
                 <div class="avatar">
-                    <img src="director.jpg" alt="Team Member">
-                    <div class="experience">Expert</div>
+                    <img src="director.jpg" alt="Member">
+                    <div class="exp-tag">Expert</div>
                 </div>
                 <h3>Saaish B.</h3>
                 <div class="role">Team Member</div>
-                <p class="description">Specializes in seed quality testing and quality assurance.</p>
+                <p class="desc">Specializes in seed quality testing and quality assurance.</p>
                 <div class="skills">
-                    <span class="skill">Seed Quality Testing</span>
-                    <span class="skill">Quality Assurance</span>
+                    <span class="skill">Quality Testing</span>
+                    <span class="skill">Assurance</span>
                 </div>
             </div>
             
             <div class="team-card">
                 <div class="avatar">
-                    <img src="director.jpg" alt="Team Member">
-                    <div class="experience">25+ Years</div>
+                    <img src="director.jpg" alt="Member">
+                    <div class="exp-tag">25+</div>
                 </div>
                 <h3>Shreya Hundekar</h3>
                 <div class="role">Team Member</div>
-                <p class="description">Specializes in seed processing, packing and dispatches with 25+ years of experience.</p>
+                <p class="desc">Specializes in seed processing, packing and dispatches with 25+ years experience.</p>
                 <div class="skills">
-                    <span class="skill">Seed Processing</span>
-                    <span class="skill">Packing & Dispatch</span>
+                    <span class="skill">Processing</span>
+                    <span class="skill">Dispatch</span>
                 </div>
             </div>
         </div>
