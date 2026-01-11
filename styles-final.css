@@ -595,6 +595,10 @@ padding: 60px 5%;
 background: #ffffff;
 }
 
+.team-preview::before {
+display: none;
+}
+
 .team-container {
 max-width: 800px;
 margin: 0 auto;
@@ -839,6 +843,10 @@ padding: 80px 5%;
 background: #ffffff;
 }
 
+.compact-about::before {
+display: none;
+}
+
 .about-wrapper {
 max-width: 1200px;
 margin: 0 auto;
@@ -975,6 +983,10 @@ margin-right: 8px;
 .leadership-section {
 padding: 80px 5%;
 background: #ffffff;
+}
+
+.leadership-section::before {
+display: none;
 }
 
 .leadership-header {
@@ -1151,6 +1163,10 @@ margin-bottom: 12px;
 .dynamic-gallery {
 padding: 40px 5%;
 background: #ffffff;
+}
+
+.dynamic-gallery::before {
+display: none;
 }
 
 .gallery-header {
@@ -1336,6 +1352,10 @@ animation: heroGlow 8s ease-in-out infinite;
 .dynamic-services {
 padding: 80px 5%;
 background: #ffffff;
+}
+
+.dynamic-services::before {
+display: none;
 }
 
 .services-header {
