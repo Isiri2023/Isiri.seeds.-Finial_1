@@ -1128,7 +1128,7 @@ font-size: 0.7rem;
 
 /* =============================
   DYNAMIC GALLERY PAGE
-============================= */
+============================= 
 
 .gallery-hero {
 position: relative;
@@ -1144,7 +1144,7 @@ justify-content: center;
 text-align: center;
 color: white;
 overflow: hidden;
-}
+}*/
 
 .hero-overlay {
 position: absolute;
