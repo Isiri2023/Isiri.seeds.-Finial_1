@@ -777,7 +777,7 @@ position: relative;
 height: 60vh;
 min-height: 400px;
 background: linear-gradient(135deg, rgba(14,107,35,0.95) 0%, rgba(6,74,25,0.9) 100%);
-display: flex;
+display: none;
 align-items: center;
 justify-content: center;
 text-align: center;
