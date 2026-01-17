@@ -1159,10 +1159,10 @@ background: #ffffff;
 display: none;
 }
 
-/*.gallery-header {
+.gallery-header {
 text-align: center;
 margin-bottom: 35px;
-}*/
+}
 
 .section-title {
 font-size: 2rem !important;
